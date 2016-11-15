@@ -234,7 +234,7 @@ func (r *idTokenRefresher) Refresh() (jose.JWT, error) {
 	if err != nil {
 		return jose.JWT{}, fmt.Errorf("could not refresh token: %v", err)
 	}
-	jwt, err := jose.ParseJWT(tokens.IDToken)
+	jwt, err := jose.ParseJWT(tokens.AccessToken)
 	if err != nil {
 		return jose.JWT{}, err
 	}
